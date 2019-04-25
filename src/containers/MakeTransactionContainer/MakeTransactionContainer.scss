@@ -1,0 +1,24 @@
+.make-transaction-container {
+  left: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+
+  &__body {
+    max-width: 300px;
+    padding: 32px 16px;
+  }
+
+  &__description {
+    margin: 16px 0px;
+  }
+
+  &__footer {
+    padding: 16px;
+    margin-top: 24px;
+    text-align: right;
+  }
+}

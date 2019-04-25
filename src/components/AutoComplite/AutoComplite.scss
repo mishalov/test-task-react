@@ -1,0 +1,20 @@
+.auto-complite-container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+  -webkit-font-smoothing: antialiased;
+
+  .auto-complite {
+    &__control {
+      border-radius: 0px;
+      border-style: none;
+
+      &--is-focused {
+        border-width: 0px;
+        box-shadow: none;
+      }
+    }
+
+    &__value-container {
+      padding: 0px;
+    }
+  }
+}

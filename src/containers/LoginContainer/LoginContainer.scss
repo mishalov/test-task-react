@@ -1,0 +1,17 @@
+.login-container {
+  padding: 24px;
+
+  &__head {
+    font-weight: 900;
+    text-align: center;
+    margin: 24px 0px;
+  }
+
+  &__body {
+    width: 100%;
+  }
+
+  &__register {
+    margin: 12px 0px;
+  }
+}

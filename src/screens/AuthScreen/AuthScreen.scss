@@ -1,0 +1,14 @@
+.auth-screen {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  &__login {
+    max-width: 400px;
+  }
+
+  &__registration {
+    max-width: 400px;
+  }
+}

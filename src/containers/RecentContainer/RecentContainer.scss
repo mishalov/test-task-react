@@ -1,0 +1,45 @@
+.recent-container {
+  width: 100%;
+  background-color: rgba(#fff, 0.3);
+  @media screen and (max-width: 480px) {
+    padding: 0px;
+  }
+
+  &__head {
+    display: flex;
+    padding: 24px;
+    padding-bottom: 0px;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: 480px) {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    &__sorts {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 16px;
+    }
+
+    &__filters,
+    &__sorts {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__filter-choose {
+    padding: 4px;
+    display: inline-block;
+  }
+
+  &__body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,11 @@
+.top-bar-container {
+  display: flex;
+  &__title {
+    flex-grow: 1;
+  }
+
+  &__user-group {
+    display: flex;
+    align-items: center;
+  }
+}
