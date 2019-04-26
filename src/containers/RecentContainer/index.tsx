@@ -191,7 +191,7 @@ class RecentContainer extends React.Component<IRecentContainerProps, IRecentCont
                     this.handleSwitchSort(index);
                   };
                   return (
-                    <MenuItem key={index} onClick={handleChoose}>
+                    <MenuItem key={`sortOptions_${index}`} onClick={handleChoose}>
                       {sortItem.title}
                     </MenuItem>
                   );
@@ -208,7 +208,7 @@ class RecentContainer extends React.Component<IRecentContainerProps, IRecentCont
                     this.handleSwitchFilter(index);
                   };
                   return (
-                    <MenuItem key={index} onClick={handleChoose}>
+                    <MenuItem key={`sortOptions_${index}`} onClick={handleChoose}>
                       {filterItem.title}
                     </MenuItem>
                   );
@@ -216,8 +216,9 @@ class RecentContainer extends React.Component<IRecentContainerProps, IRecentCont
               </Menu>
             </div>
           </div>
-          {recentTransactions.map(transaction => (
+          {recentTransactions.map((transaction, index) => (
             <TransactionCard
+              key={`transaction_${transaction.id}`}
               {...transaction}
               handleAgainTransaction={this.handleAgainTransaction}
             />

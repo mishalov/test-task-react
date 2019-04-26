@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ITransactionItem } from '../../module';
 import './TransactionCard.scss';
 import {
@@ -14,17 +14,17 @@ import {
 } from '@material-ui/core';
 import dayjs from 'dayjs';
 import 'dayjs/locale/en'; // load on demand
-import { inject, observer } from 'mobx-react';
 
 interface ITransactionCardProps extends ITransactionItem {
   handleAgainTransaction: (username: string, amount: number) => void;
 }
 
 const TransactionCard = (props: ITransactionCardProps) => {
-  const transType = props.amount > 0 ? 'Incoming' : 'Outcoming';
-  const absAmount = Math.abs(props.amount);
+  const { username, balance, amount, date, handleAgainTransaction } = props;
+  const transType = amount > 0 ? 'Incoming' : 'Outcoming';
+  const absAmount = Math.abs(amount);
   const handleAgain = () => {
-    props.handleAgainTransaction(props.username, props.amount);
+    handleAgainTransaction(username, amount);
   };
   return (
     <Paper className="transaction-card">
@@ -41,7 +41,7 @@ const TransactionCard = (props: ITransactionCardProps) => {
           <TableRow>
             <TableCell style={{ width: '10px' }}>Date:</TableCell>
             <TableCell>
-              {dayjs(props.date)
+              {dayjs(date)
                 .locale('en')
                 .format('DD.MM.YY HH:mm')}
             </TableCell>
@@ -52,11 +52,11 @@ const TransactionCard = (props: ITransactionCardProps) => {
           </TableRow>
           <TableRow>
             <TableCell>{transType === 'Incoming' ? 'Sender' : 'Recipient'}</TableCell>
-            <TableCell style={{ overflow: 'hidden' }}>{props.username}</TableCell>
+            <TableCell style={{ overflow: 'hidden' }}>{username}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Balance</TableCell>
-            <TableCell>{props.balance}</TableCell>
+            <TableCell>{balance}</TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -64,6 +64,6 @@ const TransactionCard = (props: ITransactionCardProps) => {
   );
 };
 
-const WrappedTransactionCard = inject('appStore')(observer(TransactionCard));
+const WrappedTransactionCard = memo(TransactionCard);
 
 export default WrappedTransactionCard;
