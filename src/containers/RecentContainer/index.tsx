@@ -216,13 +216,15 @@ class RecentContainer extends React.Component<IRecentContainerProps, IRecentCont
               </Menu>
             </div>
           </div>
-          {recentTransactions.map((transaction, index) => (
-            <TransactionCard
-              key={`transaction_${transaction.id}`}
-              {...transaction}
-              handleAgainTransaction={this.handleAgainTransaction}
-            />
-          ))}
+          <div className="recent-container__card-list">
+            {recentTransactions.map(transaction => (
+              <TransactionCard
+                key={`transaction_${transaction.id}`}
+                {...transaction}
+                handleAgainTransaction={this.handleAgainTransaction}
+              />
+            ))}
+          </div>
         </div>
       </div>
     );

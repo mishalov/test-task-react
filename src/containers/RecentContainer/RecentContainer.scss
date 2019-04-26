@@ -42,4 +42,11 @@
     overflow-x: hidden;
     overflow-y: auto;
   }
+
+  &__card-list {
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+    display: flex;
+  }
 }
