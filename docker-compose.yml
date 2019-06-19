@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  apache:
+    image: 'httpd'
+    volumes:
+      - ./build:/usr/local/apache2/htdocs/
+    ports:
+      - '7000:80'

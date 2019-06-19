@@ -38,14 +38,14 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "devDependencies": {
+    "tslint": "5.16.0",
+    "typescript": "3.4.4"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "tslint": "^5.16.0",
-    "typescript": "3.4.4"
-  }
+  ]
 }

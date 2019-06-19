@@ -25,8 +25,8 @@ interface IMakeTransactionContainerState {
 @inject('appStore')
 @observer
 class MakeTransactionContainer extends React.Component<
-  IMakeTransactionContainerProps,
-  IMakeTransactionContainerState
+IMakeTransactionContainerProps,
+IMakeTransactionContainerState
 > {
   state = { autoComliteFilter: '', count: 0, errors: { count: '', user: '' } };
 
@@ -50,7 +50,7 @@ class MakeTransactionContainer extends React.Component<
 
   public handleChangeUser = (param: ValueType<{ label: string; value: number }>) => {
     const appStore = this.props.appStore!;
-    if (param && !(param instanceof Array)) {
+    if (param && !Array.isArray(param)) {
       const user = appStore.userList.find(usr => usr.id === param.value);
       if (!user) {
         appStore.setUserToSend('');

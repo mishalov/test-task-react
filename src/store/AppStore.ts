@@ -100,8 +100,7 @@ export default class AppStore {
   };
 
   @action
-  private fetchUserList = async (filter: string) => {
-    //Данная строчка нужна, так как бэк возвращает execption если строчка фильтра пустая
+  public fetchUserList = async (filter: string) => {
     if (!filter) return;
     try {
       const { data } = await api.post({ url: 'api/protected/users/list', data: { filter } });
